@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/chatdb?serverTimezone=Asia/Seoul
-    username: root
-    password: qkrdustn98
+    url: jdbc:mysql://localhost:3306/JTS_DB?serverTimezone=Asia/Seoul
+    username: pys_user
+    password: 1234
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
