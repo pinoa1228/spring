@@ -5,22 +5,28 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import java.time.LocalDate;
 
 @Getter
 @Builder
 @AllArgsConstructor(access=AccessLevel.PROTECTED)//생성자 룸복
-@Entity(name="JTS_DB.user")//테이블명 작성
+@Entity(name="JTS_DB")//테이블명 작성
 public class UserEntity {
 
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long personal_num;
+
+    @Column
     private String id;
 
-    @Column(length = 10, nullable = false)
+    @Column @NotEmpty
     private String pw;
 
-    @Column(length = 10, nullable = false)
+    @Column@NotEmpty
     private String name;
 
     @Column
@@ -32,8 +38,8 @@ public class UserEntity {
     @Column
     private String appointment_content;
 
-    @Column
-    private String appointment_date;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate date;
 
     @Column(length = 10)
     private int continuation;
@@ -47,7 +53,7 @@ public class UserEntity {
                 ", consult_content='" + consult_content + '\'' +
                 ", consult_number=" + consult_number +
                 ", appointment_content='" + appointment_content + '\'' +
-                ", appointment_date='" + appointment_date + '\'' +
+                ", date=" + date +
                 ", continuation=" + continuation +
                 '}';
     }
