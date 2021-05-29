@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/JTS_DB?serverTimezone=Asia/Seoul
-    username: pys_user
-    password: 1234
+    url: jdbc:mysql://localhost:3306/JTS?serverTimezone=Asia/Seoul
+    username: yoni
+    password: 99tjddusdl!A
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -14,7 +14,7 @@ spring:
         format_sql: true # sql 로그를 포매팅해서 보여줌
   logging:
     level:
-      org.hibernate.type: trace # bind 쿼리의 내용까지 출력. ? 부분이 실제 값으로 표현됨
+      org.hibernate.type: trace
 server:
   port: 8080
 

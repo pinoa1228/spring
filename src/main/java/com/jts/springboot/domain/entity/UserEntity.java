@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Getter
 @Builder
 
-@Entity(name="USER")//테이블명 작성
+@Entity(name="USER")//테이블명 작성(DB가 해당 객체를 인식가능)
 public class UserEntity {
 
     public UserEntity(Long personal_num, String id, String pw, String name, String consult_content, int consult_number, String appointment_content, LocalDate date, int continuation) {
