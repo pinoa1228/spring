@@ -1,7 +1,7 @@
 datasource:
-  url: jdbc:mysql://jts-rds-database.c51k3dcrk1uo.ap-northeast-2.rds.amazonaws.com:3306/jtsRDSDB?serverTimezone=Asia/Seoul
-  username: pinoa1228
-  password: qkrdustn98
+  url: jdbc:mysql://localhost:3306/jtsRDSDB?serverTimezone=Asia/Seoul
+  username: pys_user
+  password: 1234
   driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
