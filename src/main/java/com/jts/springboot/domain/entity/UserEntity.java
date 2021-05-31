@@ -1,10 +1,7 @@
 package com.jts.springboot.domain.entity;
 
 
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -13,6 +10,7 @@ import java.time.LocalDate;
 
 @Getter
 @Builder
+@NoArgsConstructor
 
 @Entity(name="USER")//테이블명 작성(DB가 해당 객체를 인식가능)
 public class UserEntity {

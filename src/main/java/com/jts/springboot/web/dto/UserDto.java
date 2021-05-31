@@ -13,8 +13,9 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
+
 public class UserDto {
-    private Long personal_num;
+   private Long personal_num;
     private String id;
     private String pw;
     private String name;
@@ -24,10 +25,21 @@ public class UserDto {
     private LocalDate date;
     private int continuation;
 
+    public UserDto()
+    {
+
+    }
+
+    public UserDto(String id, String pw, String name) {
+        this.id = id;
+        this.pw = pw;
+        this.name = name;
+    }
+
     public UserDto(@JsonProperty("personal_num") Long personal_num, @JsonProperty("id") String id,
-                   @JsonProperty("pw") String pw, @JsonProperty("name") String name,@JsonProperty("consult_content") String consult_content,
-                   @JsonProperty("consult_number") int consult_number,@JsonProperty("appointment_content") String appointment_content,
-                   @JsonProperty("date") LocalDate date,@JsonProperty("continuation") int continuation)
+                   @JsonProperty("pw") String pw, @JsonProperty("name") String name, @JsonProperty("consult_content") String consult_content,
+                   @JsonProperty("consult_number") int consult_number, @JsonProperty("appointment_content") String appointment_content,
+                   @JsonProperty("date") LocalDate date, @JsonProperty("continuation") int continuation)
     { this.personal_num = personal_num;
         this.id = id;
         this.pw = pw;
@@ -52,7 +64,7 @@ public class UserDto {
                 '}';
     }
 
-    public UserEntity toEntity() {
+   public UserEntity toEntity() {
 
         UserEntity userEntity = new UserEntity(personal_num, id, pw, name, consult_content, consult_number, appointment_content, date, continuation);
         return userEntity;

@@ -6,6 +6,7 @@ import com.jts.springboot.web.dto.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
@@ -19,11 +20,15 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    @GetMapping("/jts")
+
+    @GetMapping("/")
     public String login(){
 
-        return "login";
+        return "new";
     }
+
+
+
     @PostMapping("jts/join")
     @ResponseStatus(value= HttpStatus.OK)
     public String join(@RequestBody UserDto userDto){
@@ -44,11 +49,15 @@ public class UserController {
 
     //로그인 체크하는 Controller
     @PostMapping("jts/signIn")
-        public String signIn(String inputid, String inputpw) {
-            log.info("id : {} , pw : {}", inputid, inputpw);
-            UserEntity userRepository = this.userRepository.findUserEntity(inputid, inputpw);
-            if(userRepository != null) {
+        public String signIn(@RequestParam(value = "id") String inputId,@RequestParam(value = "pw") String inputPw) {
+        System.out.println(inputId + inputPw);
+            UserEntity login = userRepository.findUserEntity(inputId, inputPw);
+//            UserEntity login = userRepository.findByIdAndPw(inputId, inputPw);
+        log.info("id : {} , pw : {}", inputId, inputPw);
+            if(login != null) {
+                System.out.println(1);
                 return "loginOK";//안드에서 다음화면 넘어가는 것으로 수정해야함
+
             }
             return "loginFail";//에러화면 or 다시 로그인페이지 뜨는것으로 수정해야함
         }
