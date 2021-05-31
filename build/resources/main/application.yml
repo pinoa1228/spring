@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/jtsRDSDB?serverTimezone=Asia/Seoul
+    url: jdbc:mysql://ec2-3-35-45-32.ap-northeast-2.compute.amazonaws.com:3306/jtsRDSDB?serverTimezone=Asia/Seoul
     username: pinoa1228
     password: qkrdustn98
     driver-class-name: com.mysql.cj.jdbc.Driver
