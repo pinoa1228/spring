@@ -16,11 +16,12 @@ import java.time.LocalDate;
 
 @Entity(name="CONSULTANT")
 public class ConsultantEntity {
-    public ConsultantEntity(Long consultant_num, String name, Long personal_num, String consultant_content, LocalDate consultant_date) {
+    public ConsultantEntity(Long consultant_num, String name, Long personal_num, String consultant_content, int consultant_type,LocalDate consultant_date) {
         this.consultant_num = consultant_num;
         this.name = name;
         this.personal_num = personal_num;
         this.consultant_content = consultant_content;
+        this.consultant_type=consultant_type;
         this.consultant_date = consultant_date;
     }
 
@@ -37,6 +38,8 @@ public class ConsultantEntity {
 
     @Column
     private String consultant_content;
+    @Column
+    private int consultant_type;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate consultant_date;
@@ -46,8 +49,9 @@ public class ConsultantEntity {
         return "ConsultantEntity{" +
                 "consultant_num=" + consultant_num +
                 ", name='" + name + '\'' +
-                ", personal_num='" + personal_num + '\'' +
+                ", personal_num=" + personal_num +
                 ", consultant_content='" + consultant_content + '\'' +
+                ", consultant_type=" + consultant_type +
                 ", consultant_date=" + consultant_date +
                 '}';
     }
