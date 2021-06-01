@@ -26,7 +26,6 @@ public class AppointmentEntity {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long personal_num;
 
     @Column
