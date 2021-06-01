@@ -23,7 +23,7 @@ public class UserEntity {
         this.consult_content = consult_content;
         this.consult_number = consult_number;
         this.appointment_content = appointment_content;
-        this.date = date;
+        this.appointment_date = date;
         this.continuation = continuation;
     }
 
@@ -49,7 +49,7 @@ public class UserEntity {
     private String appointment_content;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate date;
+    private LocalDate appointment_date;
 
     @Column(length = 10)
     private int continuation;
@@ -64,7 +64,7 @@ public class UserEntity {
                 ", consult_content='" + consult_content + '\'' +
                 ", consult_number=" + consult_number +
                 ", appointment_content='" + appointment_content + '\'' +
-                ", date=" + date +
+                ", date=" + appointment_date +
                 ", continuation=" + continuation +
                 '}';
     }
