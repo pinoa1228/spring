@@ -15,17 +15,17 @@ import java.time.LocalDate;
 @Entity(name="USER")//테이블명 작성(DB가 해당 객체를 인식가능)
 public class UserEntity {
 
-    public UserEntity(Long personal_Num, String id, String pw, String name, Long consultant_Num) {
-        this.personal_Num = personal_Num;
+    public UserEntity(Long personal_num, String id, String pw, String name, Long consultant_num) {
+        this.personal_num = personal_num;
         this.id = id;
         this.pw = pw;
         this.name = name;
-        this.consultant_Num = consultant_Num;
+        this.consultant_num = consultant_num;
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long personal_Num;
+    private Long personal_num;
 
     @Column
     private String id;
@@ -40,17 +40,17 @@ public class UserEntity {
     private String name;
 
     @Column
-    private Long consultant_Num;
+    private Long consultant_num;
 
 
     @Override
     public String toString() {
         return "UserEntity{" +
-                "personal_Num=" + personal_Num +
+                "personal_num=" + personal_num +
                 ", id='" + id + '\'' +
                 ", pw='" + pw + '\'' +
                 ", name='" + name + '\'' +
-                ", consultant_Num=" + consultant_Num +
+                ", consultant_num=" + consultant_num +
                 '}';
     }
 }
