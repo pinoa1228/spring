@@ -13,38 +13,41 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-
 public class UserDto {
-   private Long Personal_Num;
-    private String ID;
-    private String PW;
-    private String Name;
-    private Long Consultant_Num;
+   private Long personal_num;
+    private String id;
+    private String pw;
+    private String name;
+    private Long consultant_num;
 
-    public UserDto(Long personal_Num, String ID, String PW, String name, Long consultant_Num) {
-        Personal_Num = personal_Num;
-        this.ID = ID;
-        this.PW = PW;
-        Name = name;
-        Consultant_Num = consultant_Num;
+
+    public UserDto(@JsonProperty("personal_num") Long personal_num,
+                   @JsonProperty("id") String id, @JsonProperty("pw") String pw,
+                   @JsonProperty("name") String name, @JsonProperty("consultant_num") Long consultant_num){
+
+        this.personal_num=personal_num;
+        this.id=id;
+        this.pw=pw;
+        this.name=name;
+        this.consultant_num=consultant_num;
+
     }
-    public UserDto(@JsonProperty("personal_Num") Long personal_Num,
-                   @JsonProperty("ID") String id, @JsonProperty("PW") String pw,
-                   @JsonProperty("Name") String name, @JsonProperty("Consultant_Num") Long consultant_Num)
+
 
     @Override
     public String toString() {
         return "UserDto{" +
-                "Personal_Num=" + Personal_Num +
-                ", ID='" + ID + '\'' +
-                ", PW='" + PW + '\'' +
-                ", Name='" + Name + '\'' +
-                ", Consultant_Num=" + Consultant_Num +
+                "personal_num=" + personal_num +
+                ", id='" + id + '\'' +
+                ", pw='" + pw + '\'' +
+                ", name='" + name + '\'' +
+                ", consultant_num=" + consultant_num +
                 '}';
     }
+
     public UserEntity toEntity() {
 
-        UserEntity userEntity = new UserEntity(Personal_Num, ID, PW, Name, Consultant_Num);
+        UserEntity userEntity = new UserEntity(personal_num, id, pw, name, consultant_num);
         return userEntity;
     }
 }

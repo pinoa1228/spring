@@ -15,38 +15,42 @@ import java.time.LocalDate;
 @Entity(name="USER")//테이블명 작성(DB가 해당 객체를 인식가능)
 public class UserEntity {
 
-    public UserEntity(Long personal_Num, String ID, String PW, String name, Long consultant_Num) {
-        Personal_Num = personal_Num;
-        this.ID = ID;
-        this.PW = PW;
-        Name = name;
-        Consultant_Num = consultant_Num;
+    public UserEntity(Long personal_Num, String id, String pw, String name, Long consultant_Num) {
+        this.personal_Num = personal_Num;
+        this.id = id;
+        this.pw = pw;
+        this.name = name;
+        this.consultant_Num = consultant_Num;
     }
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Personal_Num;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long personal_Num;
 
     @Column
-    private String ID;
+    private String id;
 
 
-    @Column @NotEmpty
-    private String PW;
+    @Column
+    @NotEmpty
+    private String pw;
 
-    @Column@NotEmpty
-    private String Name;
+    @Column
+    @NotEmpty
+    private String name;
 
-    @Column @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long Consultant_Num;
+    @Column
+    private Long consultant_Num;
+
 
     @Override
     public String toString() {
         return "UserEntity{" +
-                "Personal_Num=" + Personal_Num +
-                ", ID='" + ID + '\'' +
-                ", PW='" + PW + '\'' +
-                ", Name='" + Name + '\'' +
-                ", Consultant_Num=" + Consultant_Num +
+                "personal_Num=" + personal_Num +
+                ", id='" + id + '\'' +
+                ", pw='" + pw + '\'' +
+                ", name='" + name + '\'' +
+                ", consultant_Num=" + consultant_Num +
                 '}';
     }
 }
