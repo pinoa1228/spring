@@ -15,57 +15,38 @@ import java.time.LocalDate;
 @Entity(name="USER")//테이블명 작성(DB가 해당 객체를 인식가능)
 public class UserEntity {
 
-    public UserEntity(Long personal_num, String id, String pw, String name, String consult_content, int consult_number, String appointment_content, LocalDate date, int continuation) {
-        this.personal_num = personal_num;
-        this.id = id;
-        this.pw = pw;
-        this.name = name;
-        this.consult_content = consult_content;
-        this.consult_number = consult_number;
-        this.appointment_content = appointment_content;
-        this.appointment_date = date;
-        this.continuation = continuation;
+    public UserEntity(Long personal_Num, String ID, String PW, String name, Long consultant_Num) {
+        Personal_Num = personal_Num;
+        this.ID = ID;
+        this.PW = PW;
+        Name = name;
+        Consultant_Num = consultant_Num;
     }
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long personal_num;
+    private Long Personal_Num;
 
     @Column
-    private String id;
+    private String ID;
+
 
     @Column @NotEmpty
-    private String pw;
+    private String PW;
 
     @Column@NotEmpty
-    private String name;
+    private String Name;
 
-    @Column
-    private String consult_content;
-
-    @Column(length = 10)
-    private int consult_number;
-
-    @Column
-    private String appointment_content;
-
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate appointment_date;
-
-    @Column(length = 10)
-    private int continuation;
+    @Column @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long Consultant_Num;
 
     @Override
     public String toString() {
         return "UserEntity{" +
-                "personal_num=" + personal_num +
-                ", id='" + id + '\'' +
-                ", pw='" + pw + '\'' +
-                ", name='" + name + '\'' +
-                ", consult_content='" + consult_content + '\'' +
-                ", consult_number=" + consult_number +
-                ", appointment_content='" + appointment_content + '\'' +
-                ", date=" + appointment_date +
-                ", continuation=" + continuation +
+                "Personal_Num=" + Personal_Num +
+                ", ID='" + ID + '\'' +
+                ", PW='" + PW + '\'' +
+                ", Name='" + Name + '\'' +
+                ", Consultant_Num=" + Consultant_Num +
                 '}';
     }
 }

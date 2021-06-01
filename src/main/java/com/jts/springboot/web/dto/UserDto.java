@@ -15,58 +15,36 @@ import java.time.LocalDate;
 @Setter
 
 public class UserDto {
-   private Long personal_num;
-    private String id;
-    private String pw;
-    private String name;
-    private String consult_content;
-    private int consult_number;
-    private String appointment_content;
-    private LocalDate date;
-    private int continuation;
+   private Long Personal_Num;
+    private String ID;
+    private String PW;
+    private String Name;
+    private Long Consultant_Num;
 
-    public UserDto()
-    {
-
+    public UserDto(Long personal_Num, String ID, String PW, String name, Long consultant_Num) {
+        Personal_Num = personal_Num;
+        this.ID = ID;
+        this.PW = PW;
+        Name = name;
+        Consultant_Num = consultant_Num;
     }
-
-    public UserDto(String id, String pw, String name) {
-        this.id = id;
-        this.pw = pw;
-        this.name = name;
-    }
-
-    public UserDto(@JsonProperty("personal_num") Long personal_num, @JsonProperty("id") String id,
-                   @JsonProperty("pw") String pw, @JsonProperty("name") String name, @JsonProperty("consult_content") String consult_content,
-                   @JsonProperty("consult_number") int consult_number, @JsonProperty("appointment_content") String appointment_content,
-                   @JsonProperty("date") LocalDate date, @JsonProperty("continuation") int continuation)
-    { this.personal_num = personal_num;
-        this.id = id;
-        this.pw = pw;
-        this.name = name;
-        this.consult_content = consult_content;
-        this.consult_number = consult_number;
-        this.appointment_content = appointment_content;
-        this.date = date;
-        this.continuation = continuation;
-    }
-
-
-
-
+    public UserDto(@JsonProperty("personal_Num") Long personal_Num,
+                   @JsonProperty("ID") String id, @JsonProperty("PW") String pw,
+                   @JsonProperty("Name") String name, @JsonProperty("Consultant_Num") Long consultant_Num)
 
     @Override
     public String toString() {
-        return "JoinUsDto{" +
-                "id='" + id + '\'' +
-                ", pw='" + pw + '\'' +
-                ", name='" + name + '\'' +
+        return "UserDto{" +
+                "Personal_Num=" + Personal_Num +
+                ", ID='" + ID + '\'' +
+                ", PW='" + PW + '\'' +
+                ", Name='" + Name + '\'' +
+                ", Consultant_Num=" + Consultant_Num +
                 '}';
     }
+    public UserEntity toEntity() {
 
-   public UserEntity toEntity() {
-
-        UserEntity userEntity = new UserEntity(personal_num, id, pw, name, consult_content, consult_number, appointment_content, date, continuation);
+        UserEntity userEntity = new UserEntity(Personal_Num, ID, PW, Name, Consultant_Num);
         return userEntity;
     }
 }

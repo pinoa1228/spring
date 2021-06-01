@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<UserEntity,Long> {
     @Query(value = "select * from USER  u where u.id = :id and u.pw = :pw", nativeQuery = true)
-    UserEntity findUserEntity(String id,String pw);
-    UserEntity findByIdAndPw(String id, String pw);
+    UserEntity findUserEntity(String ID,String PW);
+    UserEntity findByIdAndPw(String ID, String PW);
 
 }
