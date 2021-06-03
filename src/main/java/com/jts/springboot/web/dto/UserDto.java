@@ -20,6 +20,8 @@ public class UserDto {
     private String name;
     private Long consultant_num;
 
+    public UserDto() {
+    }
 
     public UserDto(@JsonProperty("personal_num") Long personal_num,
                    @JsonProperty("id") String id, @JsonProperty("pw") String pw,
@@ -32,6 +34,7 @@ public class UserDto {
         this.consultant_num=consultant_num;
 
     }
+
 
 
     @Override
