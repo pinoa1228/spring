@@ -49,9 +49,12 @@ public class UserController {
 
     //로그인 체크하는 Controller
     @PostMapping("jts/signIn")
-        public String signIn(@RequestParam(value = "id") String inputId,@RequestParam(value = "pw") String inputPw) {
-        System.out.println(inputId + inputPw);
-            UserEntity login = userRepository.findUserEntity(inputId, inputPw);
+        public String signIn(@RequestBody UserDto userDto) {
+        System.out.println(userDto.getId() + userDto.getPw());
+        String inputId=userDto.getId();
+        String inputPw=userDto.getPw();
+
+        UserEntity login = userRepository.findUserEntity(inputId, inputPw);
              //UserEntity login = userRepository.findByIdAndPw(inputId, inputPw);
         log.info("id : {} , pw : {}", inputId, inputPw);
             if(login != null) {
