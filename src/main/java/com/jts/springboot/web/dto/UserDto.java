@@ -3,6 +3,7 @@ package com.jts.springboot.web.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jts.springboot.domain.entity.UserEntity;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -13,6 +14,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class UserDto {
    private Long personal_num;
     private String id;
@@ -20,8 +22,7 @@ public class UserDto {
     private String name;
     private Long consultant_num;
 
-    public UserDto() {
-    }
+
     public UserDto(
                    @JsonProperty("id") String id, @JsonProperty("pw") String pw,
                    @JsonProperty("name") String name){

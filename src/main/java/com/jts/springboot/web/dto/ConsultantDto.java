@@ -4,6 +4,7 @@ package com.jts.springboot.web.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.jts.springboot.domain.entity.ConsultantEntity;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -13,6 +14,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
+
 public class ConsultantDto {
     private Long consultant_num;
     private String name;
