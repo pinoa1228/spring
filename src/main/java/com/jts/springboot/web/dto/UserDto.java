@@ -22,6 +22,17 @@ public class UserDto {
 
     public UserDto() {
     }
+    public UserDto(
+                   @JsonProperty("id") String id, @JsonProperty("pw") String pw,
+                   @JsonProperty("name") String name){
+
+        this.id=id;
+        this.pw=pw;
+        this.name=name;
+
+
+    }
+
 
     public UserDto(@JsonProperty("personal_num") Long personal_num,
                    @JsonProperty("id") String id, @JsonProperty("pw") String pw,
