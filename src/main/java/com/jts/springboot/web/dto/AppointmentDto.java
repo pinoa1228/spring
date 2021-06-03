@@ -11,19 +11,19 @@ import java.time.LocalDate;
 
 public class AppointmentDto {
 
-    private Long personal_num;
-    private String name;
-    private Long consultant_num;
+    private Long a_personal_num;
+    private String a_name;
+    private Long a_consultant_num;
     private String appointment_content;
     private LocalDate appointment_date;
 
     public AppointmentDto() {
     }
 
-    public AppointmentDto(@JsonProperty("personal_num") Long personal_num,@JsonProperty("name") String name,@JsonProperty("consultant_num") Long consultant_num,@JsonProperty("appointment_content") String appointment_content,@JsonProperty("appointment_date") LocalDate appointment_date) {
-        this.personal_num = personal_num;
-        this.name = name;
-        this.consultant_num = consultant_num;
+    public AppointmentDto(@JsonProperty("a_personal_num") Long a_personal_num,@JsonProperty("a_name") String a_name,@JsonProperty("a_consultant_num") Long a_consultant_num,@JsonProperty("appointment_content") String appointment_content,@JsonProperty("appointment_date") LocalDate appointment_date) {
+        this.a_personal_num = a_personal_num;
+        this.a_name = a_name;
+        this.a_consultant_num = a_consultant_num;
         this.appointment_content = appointment_content;
         this.appointment_date = appointment_date;
     }
@@ -31,16 +31,16 @@ public class AppointmentDto {
     @Override
     public String toString() {
         return "AppointmentDto{" +
-                "personal_num=" + personal_num +
-                ", name='" + name + '\'' +
-                ", consultant_num=" + consultant_num +
+                "a_personal_num=" + a_personal_num +
+                ", a_name='" + a_name + '\'' +
+                ", a_consultant_num=" + a_consultant_num +
                 ", appointment_content='" + appointment_content + '\'' +
                 ", appointment_date=" + appointment_date +
                 '}';
     }
 
     public AppointmentEntity toEntity(){
-        AppointmentEntity appointmentEntity=new AppointmentEntity(personal_num,name,consultant_num,appointment_content,appointment_date);
+        AppointmentEntity appointmentEntity=new AppointmentEntity(a_personal_num,a_name,a_consultant_num,appointment_content,appointment_date);
         return  appointmentEntity;
     }
 }

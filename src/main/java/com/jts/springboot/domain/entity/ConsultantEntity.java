@@ -16,10 +16,10 @@ import java.time.LocalDate;
 
 @Entity(name="CONSULTANT")
 public class ConsultantEntity {
-    public ConsultantEntity(Long consultant_num, String name, Long personal_num, String consultant_content, int consultant_type,LocalDate consultant_date) {
-        this.consultant_num = consultant_num;
-        this.name = name;
-        this.personal_num = personal_num;
+    public ConsultantEntity(Long c_consultant_num, String c_name, Long c_personal_num, String consultant_content, int consultant_type,LocalDate consultant_date) {
+        this.c_consultant_num = c_consultant_num;
+        this.c_name = c_name;
+        this.c_personal_num = c_personal_num;
         this.consultant_content = consultant_content;
         this.consultant_type=consultant_type;
         this.consultant_date = consultant_date;
@@ -27,14 +27,14 @@ public class ConsultantEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long consultant_num;
+    private Long c_consultant_num;
 
 
     @Column@NotEmpty
-    private String name;
+    private String c_name;
 
     @Column@NotEmpty
-    private Long personal_num;
+    private Long c_personal_num;
 
     @Column
     private String consultant_content;
@@ -47,9 +47,9 @@ public class ConsultantEntity {
     @Override
     public String toString() {
         return "ConsultantEntity{" +
-                "consultant_num=" + consultant_num +
-                ", name='" + name + '\'' +
-                ", personal_num=" + personal_num +
+                "c_consultant_num=" + c_consultant_num +
+                ", c_name='" + c_name + '\'' +
+                ", c_personal_num=" + c_personal_num +
                 ", consultant_content='" + consultant_content + '\'' +
                 ", consultant_type=" + consultant_type +
                 ", consultant_date=" + consultant_date +

@@ -16,9 +16,9 @@ import java.time.LocalDate;
 @Setter
 
 public class ConsultantDto {
-    private Long consultant_num;
-    private String name;
-    private Long personal_num;
+    private Long c_consultant_num;
+    private String c_name;
+    private Long c_personal_num;
     private String consultant_content;
     private  int consultant_type;
     private LocalDate consultant_date;
@@ -26,10 +26,10 @@ public class ConsultantDto {
     public ConsultantDto() {
     }
 
-    public ConsultantDto(@JsonProperty("consultant_num") Long consultant_num,@JsonProperty("name") String name,@JsonProperty("personal_num") Long personal_num,@JsonProperty("consultant_content") String consultant_content,@JsonProperty("consultant_type") int consultant_type,@JsonProperty("consultant_date") LocalDate consultant_date) {
-        this.consultant_num = consultant_num;
-        this.name = name;
-        this.personal_num = personal_num;
+    public ConsultantDto(@JsonProperty("c_consultant_num") Long c_consultant_num,@JsonProperty("c_name") String c_name,@JsonProperty("c_personal_num") Long c_personal_num,@JsonProperty("consultant_content") String consultant_content,@JsonProperty("consultant_type") int consultant_type,@JsonProperty("consultant_date") LocalDate consultant_date) {
+        this.c_consultant_num = c_consultant_num;
+        this.c_name = c_name;
+        this.c_personal_num =c_personal_num;
         this.consultant_content = consultant_content;
         this.consultant_type=consultant_type;
         this.consultant_date = consultant_date;
@@ -38,9 +38,9 @@ public class ConsultantDto {
     @Override
     public String toString() {
         return "ConsultantDto{" +
-                "consultant_num=" + consultant_num +
-                ", name='" + name + '\'' +
-                ", personal_num=" + personal_num +
+                "c_consultant_num=" + c_consultant_num +
+                ", c_name='" + c_name + '\'' +
+                ", c_personal_num=" + c_personal_num +
                 ", consultant_content='" + consultant_content + '\'' +
                 ", consultant_type=" + consultant_type +
                 ", consultant_date=" + consultant_date +
@@ -49,7 +49,7 @@ public class ConsultantDto {
 
     public ConsultantEntity toEntity(){
 
-        ConsultantEntity consultantEntity=new ConsultantEntity(consultant_num,name,personal_num,consultant_content,consultant_type,consultant_date);
+        ConsultantEntity consultantEntity=new ConsultantEntity(c_consultant_num,c_name,c_personal_num,consultant_content,consultant_type,consultant_date);
         return consultantEntity;
 
     }
