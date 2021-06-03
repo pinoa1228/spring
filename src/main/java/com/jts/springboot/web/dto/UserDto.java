@@ -23,7 +23,7 @@ public class UserDto {
     private Long consultant_num;
 
 
-    public UserDto(
+   /* public UserDto(
                    @JsonProperty("id") String id, @JsonProperty("pw") String pw,
                    @JsonProperty("name") String name){
 
@@ -32,7 +32,7 @@ public class UserDto {
         this.name=name;
 
 
-    }
+    }*/
 
 
     public UserDto(@JsonProperty("personal_num") Long personal_num,
