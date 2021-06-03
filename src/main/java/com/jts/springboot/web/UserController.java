@@ -31,7 +31,7 @@ public class UserController {
 
     @PostMapping("jts/join")
     @ResponseStatus(value= HttpStatus.OK)
-    public String join(@RequestBody UserDto userDto){
+    public UserEntity join(@RequestBody UserDto userDto){
 
 
         System.out.println(userDto.toString());
@@ -42,9 +42,7 @@ public class UserController {
         //repository에게 entity를 db안에 저장하게 함
         UserEntity saved = userRepository.save(user);
 
-        System.out.println(saved);
-
-        return "";
+        return saved;
     }
 
     //로그인 체크하는 Controller
