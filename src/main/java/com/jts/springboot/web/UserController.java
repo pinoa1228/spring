@@ -47,21 +47,20 @@ public class UserController {
 
     //로그인 체크하는 Controller
     @PostMapping("jts/signIn")
-        public String signIn(@RequestBody UserDto userDto) {
+        public UserEntity signIn(@RequestBody UserDto userDto) {
         System.out.println(userDto.getId() + userDto.getPw());
-        String inputId=userDto.getId();
-        String inputPw=userDto.getPw();
+        String inputId = userDto.getId();
+        String inputPw = userDto.getPw();
 
         UserEntity login = userRepository.findUserEntity(inputId, inputPw);
-             //UserEntity login = userRepository.findByIdAndPw(inputId, inputPw);
+        //UserEntity login = userRepository.findByIdAndPw(inputId, inputPw);
         log.info("id : {} , pw : {}", inputId, inputPw);
-            if(login != null) {
-                System.out.println(1);
-                return "loginOK";//안드에서 다음화면 넘어가는 것으로 수정해야함
 
-            }
-            return "loginFail";//에러화면 or 다시 로그인페이지 뜨는것으로 수정해야함
+            return login;//안드에서 다음화면 넘어가는 것으로 수정해야함
+
         }
 
     }
+
+
 
