@@ -68,7 +68,7 @@ public class UserController {
             return check;
         }
 
-       @PutMapping("jts/update/{id}")
+       /*@PutMapping("jts/update/{id}")
        @ResponseStatus(value=HttpStatus.OK)
        public UserEntity updateUser(@PathVariable("id") String id,@RequestParam("consultant_num") int consultant_num){
 
@@ -83,7 +83,7 @@ public class UserController {
            UserEntity saved = userRepository.save(find2);
            return saved;
 
-       }
+       }*/
 
 
     }
