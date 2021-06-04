@@ -60,12 +60,10 @@ public class UserController {
         }
 
         @GetMapping("jts/join/{id}")
-    public ResponseEntity<Boolean> checkIdDuplicate(@PathVariable ("id")String id){
+    public UserEntity checkIdDuplicate(@PathVariable ("id") String id){
             System.out.println(id);
-            boolean check=userRepository.existsById(id);
-
-
-        return ResponseEntity.ok(check);
+            UserEntity check=userRepository.findById(id);
+            return check;
         }
       /*  @GetMapping("jts/idCheck2")
      public UserEntity checkIdDuplicate1(@PathVariable("id") String id){
