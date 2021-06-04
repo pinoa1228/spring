@@ -34,6 +34,7 @@ public class ConsultantController {
 
 
         System.out.println(consultantDto.toString());
+
         //dto를 entity로 변환
         ConsultantEntity user=consultantDto.toEntity();
         System.out.println(user.toString());

@@ -23,11 +23,11 @@ public class UserEntity {
         this.consultant_num = consultant_num;
     }
 
-    @Column
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long personal_num;
 
-    @Id
+    @Column
     @NotEmpty
     private String id;
 
