@@ -30,7 +30,6 @@ public class ConsultantEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long c_consultant_num;
 
-
     @Column@NotEmpty
     private String c_name;
 

@@ -39,6 +39,7 @@ public class UserController {
         System.out.println(user.toString());
 
         //repository에게 entity를 db안에 저장하게 함
+
         UserEntity saved = userRepository.save(user);
 
         return saved;
@@ -46,6 +47,7 @@ public class UserController {
 
     //로그인 체크하는 Controller
     @PostMapping("jts/signIn")
+    @ResponseStatus(value= HttpStatus.OK)
         public UserEntity signIn(@RequestBody UserDto userDto) {
         System.out.println(userDto.getId() + userDto.getPw());
         String inputId = userDto.getId();
@@ -65,6 +67,23 @@ public class UserController {
             UserEntity check=userRepository.findById(id);
             return check;
         }
+
+       @PutMapping("jts/update/{id}")
+       @ResponseStatus(value=HttpStatus.OK)
+       public UserEntity updateUser(@PathVariable("id") String id,@RequestParam("consultant_num") int consultant_num){
+
+
+           UserEntity find=userRepository.findById(id);
+           UserEntity find2=userRepository.updateTitle(consultant_num,find.getId());
+
+           //UserEntity user= .toEntity();
+           System.out.println(find2.toString());
+
+           //repository에게 entity를 db안에 저장하게 함
+           UserEntity saved = userRepository.save(find2);
+           return saved;
+
+       }
 
 
     }
