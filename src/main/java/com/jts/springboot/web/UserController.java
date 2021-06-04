@@ -3,7 +3,7 @@ package com.jts.springboot.web;
 import com.jts.springboot.domain.entity.UserEntity;
 import com.jts.springboot.domain.repository.UserRepository;
 import com.jts.springboot.web.dto.UserDto;
-import com.jts.springboot.web.dto.UserService;
+//import com.jts.springboot.web.dto.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -59,10 +59,25 @@ public class UserController {
 
         }
 
-        @GetMapping("jts/idCheck")
-    public ResponseEntity<Boolean> checkIdDuplicate(@PathVariable String id){
-        return ResponseEntity.ok(UserService.checkIdDuplicate(id));
+        @GetMapping("jts/join/{id}")
+    public ResponseEntity<Boolean> checkIdDuplicate(@PathVariable ("id")String id){
+            System.out.println(id);
+            boolean check=userRepository.existsById(id);
+
+
+        return ResponseEntity.ok(check);
         }
+      /*  @GetMapping("jts/idCheck2")
+     public UserEntity checkIdDuplicate1(@PathVariable("id") String id){
+
+        System.out.println(id);
+         boolean check=userRepository.existsById(id);
+        return check;
+
+        }*/
+
+
+
     }
 
 
