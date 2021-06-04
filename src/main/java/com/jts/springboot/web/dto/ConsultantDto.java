@@ -14,7 +14,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-
+@NoArgsConstructor
 public class ConsultantDto {
     private Long c_consultant_num;
     private String c_name;
@@ -24,8 +24,6 @@ public class ConsultantDto {
     private LocalDate consultant_date;
     private String negative;
 
-    public ConsultantDto() {
-    }
 
 
     public ConsultantDto(@JsonProperty("c_consultant_num") Long c_consultant_num,@JsonProperty("c_name") String c_name,@JsonProperty("c_personal_num") Long c_personal_num,@JsonProperty("consultant_content") String consultant_content,@JsonProperty("consultant_type") int consultant_type,@JsonProperty("consultant_date") LocalDate consultant_date,@JsonProperty("negative") String negative) {

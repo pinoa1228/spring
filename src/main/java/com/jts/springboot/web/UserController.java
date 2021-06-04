@@ -28,7 +28,7 @@ public class UserController {
 
         return "new";
     }
-        @PostMapping("jts/join")
+    @PostMapping("jts/join")
     @ResponseStatus(value= HttpStatus.OK)
     public UserEntity join(@RequestBody UserDto userDto){
 
@@ -61,20 +61,10 @@ public class UserController {
 
         @GetMapping("jts/join/{id}")
            public UserEntity checkIdDuplicate(@PathVariable("id") String id){
-           // String id=userDto.getId();
             System.out.println(id);
             UserEntity check=userRepository.findById(id);
             return check;
         }
-      /*  @GetMapping("jts/idCheck2")
-     public UserEntity checkIdDuplicate1(@PathVariable("id") String id){
-
-        System.out.println(id);
-         boolean check=userRepository.existsById(id);
-        return check;
-
-        }*/
-
 
 
     }
