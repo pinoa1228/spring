@@ -3,9 +3,11 @@ package com.jts.springboot.web;
 import com.jts.springboot.domain.entity.UserEntity;
 import com.jts.springboot.domain.repository.UserRepository;
 import com.jts.springboot.web.dto.UserDto;
+import com.jts.springboot.web.dto.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,10 +28,7 @@ public class UserController {
 
         return "new";
     }
-
-
-
-    @PostMapping("jts/join")
+        @PostMapping("jts/join")
     @ResponseStatus(value= HttpStatus.OK)
     public UserEntity join(@RequestBody UserDto userDto){
 
@@ -56,10 +55,14 @@ public class UserController {
         //UserEntity login = userRepository.findByIdAndPw(inputId, inputPw);
         log.info("id : {} , pw : {}", inputId, inputPw);
 
-            return login;//안드에서 다음화면 넘어가는 것으로 수정해야함
+            return login;//안드에서 다음화면 넘어가는 것
 
         }
 
+        @GetMapping("jts/idCheck")
+    public ResponseEntity<Boolean> checkIdDuplicate(@PathVariable String id){
+        return ResponseEntity.ok(UserService.checkIdDuplicate(id));
+        }
     }
 
 
