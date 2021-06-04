@@ -60,7 +60,8 @@ public class UserController {
         }
 
         @GetMapping("jts/join/{id}")
-           public UserEntity checkIdDuplicate(@PathVariable ("id") String id){
+           public UserEntity checkIdDuplicate(@RequestBody UserDto userDto){
+            String id=userDto.getId();
             System.out.println(id);
             UserEntity check=userRepository.findById(id);
             return check;

@@ -28,8 +28,8 @@ public class UserEntity {
 
 
     @Column
+    @NotEmpty
     private String id;
-
 
     @Column
     @NotEmpty
