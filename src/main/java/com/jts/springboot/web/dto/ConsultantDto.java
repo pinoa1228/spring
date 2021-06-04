@@ -26,7 +26,8 @@ public class ConsultantDto {
 
 
 
-    public ConsultantDto(@JsonProperty("c_consultant_num") Long c_consultant_num,@JsonProperty("c_name") String c_name,@JsonProperty("c_personal_num") Long c_personal_num,@JsonProperty("consultant_content") String consultant_content,@JsonProperty("consultant_type") int consultant_type,@JsonProperty("consultant_date") LocalDate consultant_date,@JsonProperty("negative") String negative) {
+    public ConsultantDto(@JsonProperty("c_consultant_num") Long c_consultant_num,@JsonProperty("c_name") String c_name,@JsonProperty("c_personal_num") Long c_personal_num,@JsonProperty("consultant_content") String consultant_content,@JsonProperty("consultant_type") int consultant_type,@JsonProperty("consultant_date")
+            LocalDate consultant_date,@JsonProperty("negative") String negative) {
         this.c_consultant_num = c_consultant_num;
         this.c_name = c_name;
         this.c_personal_num =c_personal_num;

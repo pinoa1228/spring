@@ -34,7 +34,7 @@ public class ConsultantEntity {
     @Column@NotEmpty
     private String c_name;
 
-    @Column@NotEmpty
+    @Column
     private Long c_personal_num;
 
     @Column
