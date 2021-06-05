@@ -14,7 +14,7 @@ public interface UserRepository extends JpaRepository<UserEntity,Long> {
 
     UserEntity findById(String id);
   //  boolean existsById(String id);
-    @Query("UPDATE user p SET p.consultant_num = :consultant_num WHERE p.personal_num = :personal_num")
+    @Query(value = "UPDATE user p SET p.consultant_num = :consultant_num WHERE p.personal_num = :personal_num" ,nativeQuery = true)
     UserEntity updatenum(Long personal_num,Long consultant_num);
 
 }
