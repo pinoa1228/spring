@@ -45,7 +45,7 @@ public class ConsultantController {
     public ConsultantEntity checkC_consultant_num(@PathVariable("c_consultant_num") Long c_consultant_num){
           System.out.println(c_consultant_num);
         ConsultantEntity check = consultantRepository.findConsultant_num(c_consultant_num);
-        check.getConsultant_content();
+        System.out.println( check.getConsultant_content());
                 return check;
     }
 
