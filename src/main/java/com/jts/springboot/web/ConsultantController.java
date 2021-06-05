@@ -9,10 +9,7 @@ import com.jts.springboot.web.dto.UserDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
@@ -43,6 +40,13 @@ public class ConsultantController {
         ConsultantEntity saved = consultantRepository.save(user);
 
         return saved;
+    }
+
+    @GetMapping("jts/consultant/{c_consultant_num}")
+    public ConsultantEntity checkC_consultant_num(@PathVariable("c_consultant_num") Long c_consultant_num){
+       // System.out.println(c_consultant_num);
+        ConsultantEntity check = consultantRepository.findByC_consultant_num(c_consultant_num);
+                return check;
     }
 
 }
