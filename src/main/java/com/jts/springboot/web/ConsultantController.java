@@ -29,7 +29,6 @@ public class ConsultantController {
     @ResponseStatus(value= HttpStatus.OK)
     public ConsultantEntity join(@RequestBody ConsultantDto consultantDto){
 
-
         System.out.println(consultantDto.toString());
 
         //dto를 entity로 변환
