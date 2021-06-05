@@ -69,9 +69,9 @@ public class UserController {
         }
 
 
-       @PutMapping("jts/update/{personal_num}")
+       @PutMapping("jts/update/{personal_num}/{consultant_num}")
        @ResponseStatus(value=HttpStatus.OK)
-       public UserEntity updateUser(@PathVariable("personal_num") Long personal_num,@RequestParam("consultant_num") Long consultant_num){
+       public UserEntity updateUser(@PathVariable("personal_num") Long personal_num,@PathVariable("consultant_num") Long consultant_num){
          //  @RequestBody UserDto userDto
 
            //System.out.println(userDto.toString());
