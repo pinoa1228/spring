@@ -25,7 +25,7 @@ public class ConsultantController {
     }
 
 
-    @PostMapping("jts/content")
+    @PostMapping("jts/consultant/content")
     @ResponseStatus(value= HttpStatus.OK)
     public ConsultantEntity join(@RequestBody ConsultantDto consultantDto){
 
@@ -44,8 +44,11 @@ public class ConsultantController {
     @GetMapping("jts/consultant/{c_consultant_num}")
     public ConsultantEntity checkC_consultant_num(@PathVariable("c_consultant_num") Long c_consultant_num){
        // System.out.println(c_consultant_num);
-        ConsultantEntity check = consultantRepository.findByC_consultant_num(c_consultant_num);
+        ConsultantEntity check = consultantRepository.findConsultant_num(c_consultant_num);
                 return check;
     }
+
+
+
 
 }
