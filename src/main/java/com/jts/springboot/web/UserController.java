@@ -71,15 +71,19 @@ public class UserController {
 
        @PutMapping("jts/update/{personal_num}")
        @ResponseStatus(value=HttpStatus.OK)
-       public UserEntity updateUser(@PathVariable("personal_num") Long personal_num,@RequestBody UserDto userDto){
+       public UserEntity updateUser(@PathVariable("personal_num") Long personal_num,@RequestParam("consultant_num") Long consultant_num){
+         //  @RequestBody UserDto userDto
 
-           System.out.println(userDto.toString());
+           //System.out.println(userDto.toString());
            //dto를 entity로 변환
-           UserEntity user=userDto.toEntity();
-           System.out.println(user.toString());
+           //UserEntity user=userDto.toEntity();
+           //System.out.println(user.toString());
+           System.out.println(consultant_num);
+
 
            //repository에게 entity를 db안에 저장하게 함
-           UserEntity saved = userRepository.save(user);
+           UserEntity saved = userRepository.updatenum(personal_num,consultant_num);
+           System.out.println(saved.toString());
            return saved;
 
        }
