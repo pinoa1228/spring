@@ -43,8 +43,9 @@ public class ConsultantController {
 
     @GetMapping("jts/consultant/{c_consultant_num}")
     public ConsultantEntity checkC_consultant_num(@PathVariable("c_consultant_num") Long c_consultant_num){
-       // System.out.println(c_consultant_num);
+          System.out.println(c_consultant_num);
         ConsultantEntity check = consultantRepository.findConsultant_num(c_consultant_num);
+        check.getConsultant_content();
                 return check;
     }
 
