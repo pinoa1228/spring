@@ -68,22 +68,21 @@ public class UserController {
             return check;
         }
 
-       /*@PutMapping("jts/update/{id}")
+
+       @PutMapping("jts/update/{id}")
        @ResponseStatus(value=HttpStatus.OK)
-       public UserEntity updateUser(@PathVariable("id") String id,@RequestParam("consultant_num") int consultant_num){
+       public UserEntity updateUser(@PathVariable("id") String id,@RequestBody UserDto userDto){
 
-
-           UserEntity find=userRepository.findById(id);
-           UserEntity find2=userRepository.updateTitle(consultant_num,find.getId());
-
-           //UserEntity user= .toEntity();
-           System.out.println(find2.toString());
+           System.out.println(userDto.toString());
+           //dto를 entity로 변환
+           UserEntity user=userDto.toEntity();
+           System.out.println(user.toString());
 
            //repository에게 entity를 db안에 저장하게 함
-           UserEntity saved = userRepository.save(find2);
+           UserEntity saved = userRepository.save(user);
            return saved;
 
-       }*/
+       }
 
 
     }
