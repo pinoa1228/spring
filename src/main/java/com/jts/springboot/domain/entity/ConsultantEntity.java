@@ -38,6 +38,7 @@ public class ConsultantEntity {
     private Long c_personal_num;
 
     @Column
+    @ElementCollection(targetClass=String.class)
     private List<String> consultant_content;
 
     @Column
