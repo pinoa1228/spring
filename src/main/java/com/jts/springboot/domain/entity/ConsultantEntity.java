@@ -39,6 +39,7 @@ public class ConsultantEntity {
 
     @Column
     private List<String> consultant_content;
+
     @Column
     private int consultant_type;
 
