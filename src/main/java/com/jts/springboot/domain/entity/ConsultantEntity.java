@@ -9,6 +9,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Builder
@@ -16,7 +17,7 @@ import java.time.LocalDate;
 
 @Entity(name="CONSULTANT")
 public class ConsultantEntity {
-    public ConsultantEntity(Long c_consultant_num, String c_name, Long c_personal_num, String consultant_content, int consultant_type, LocalDate consultant_date, String negative) {
+    public ConsultantEntity(Long c_consultant_num, String c_name, Long c_personal_num, List<String> consultant_content, int consultant_type, LocalDate consultant_date, String negative) {
         this.c_consultant_num = c_consultant_num;
         this.c_name = c_name;
         this.c_personal_num = c_personal_num;
@@ -37,7 +38,7 @@ public class ConsultantEntity {
     private Long c_personal_num;
 
     @Column
-    private String consultant_content;
+    private List<String> consultant_content;
     @Column
     private int consultant_type;
 

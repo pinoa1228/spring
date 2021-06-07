@@ -11,6 +11,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.Column;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,7 +20,7 @@ public class ConsultantDto {
     private Long c_consultant_num;
     private String c_name;
     private Long c_personal_num;
-    private String consultant_content;
+    private List<String> consultant_content;
     private  int consultant_type;
     private LocalDate consultant_date;
     private String negative;
@@ -27,7 +28,7 @@ public class ConsultantDto {
 
 
     public ConsultantDto(@JsonProperty("c_consultant_num") Long c_consultant_num,@JsonProperty("c_name") String c_name,
-                         @JsonProperty("c_personal_num") Long c_personal_num,@JsonProperty("consultant_content") String consultant_content,
+                         @JsonProperty("c_personal_num") Long c_personal_num,@JsonProperty("consultant_content") List<String> consultant_content,
                          @JsonProperty("consultant_type") int consultant_type,@JsonProperty("consultant_date")
             LocalDate consultant_date,@JsonProperty("negative") String negative) {
         this.c_consultant_num = c_consultant_num;
